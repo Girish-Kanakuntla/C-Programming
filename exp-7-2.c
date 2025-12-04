@@ -1,36 +1,42 @@
 #include <stdio.h>
 
-void addMatrix(int mat1[2][2], int mat2[2][2], int sum[2][2]) {
+int main() {
+    int a[10][10], b[10][10], sum[10][10];
+    int r, c, i, j;
 
-    for (int i = 0; i < 2; i++){
-        for(int j = 0; j < 2; j++){
-        sum[i][j] = mat1[i][j] + mat2[i][j];    
+    printf("Enter number of rows: ");
+    scanf("%d", &r);
 
+    printf("Enter number of columns: ");
+    scanf("%d", &c);
+
+    printf("\nEnter elements of first matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            scanf("%d", &a[i][j]);
         }
     }
-}
-int main () {
-    int m1[2][2], m2[2][2], result[2][2];
-    printf("Enter The Value For THe Matrix1 :");
-    for(int i = 0; i < 2; i++){
-        for(int j = 0;j < 2; j++){
-            scanf("%d", &m1[i][j]);
-        }
-    }
-     printf("Enter The Value For THe Matrix2 :");
-    for(int i = 0; i < 2; i++){
-        for(int j = 0;j < 2; j++){
-            scanf("%d", &m2[i][j]);
-        }
-    }
-    addMatrix(m1, m2, result);
-        printf("Result: ");
 
-    for(int i = 0; i< 2; i++){
-        for(int j = 0;j < 2; j++){
-            printf("%d", result[i][j]);
+    printf("\nEnter elements of second matrix:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            scanf("%d", &b[i][j]);
+        }
     }
-    printf("\n");
+
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
     }
+
+    printf("\nSum of the matrices:\n");
+    for (i = 0; i < r; i++) {
+        for (j = 0; j < c; j++) {
+            printf("%d ", sum[i][j]);
+        }
+        printf("\n");
+    }
+
     return 0;
 }
